@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mytest
+  labels:
+    app: mytest
+    tier: backend
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      app: mytest
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: mytest
+    spec:
+      containers:
+      - name: mytest
+        image: localhost:32000/mytest:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: APP_NAME
+          value: MY
+  

@@ -30,6 +30,10 @@ systemctl restart docker
 docker tag mytest 10.152.183.38:5000/mytest
 docker push 10.152.183.38:5000/mytest:latest
 
+microk8s.kubectl apply -f mydepl.yaml
+microk8s.kubectl apply -f ingress.yml
+microk8s.kubectl expose deployment mytest --type=LoadBalancer --port=80
+
 microk8s.kubectl get pods
 -> wenn die mytest pods running sind dann solltet ihr mit dem browser ueber die IP eurer VM und /hello eine nginx Seite sehen
 

@@ -37,7 +37,7 @@ cd microk8s-miniapp
 
 docker build . -t mytest
 
-echo "{ "insecure-registries":["10.152.183.38:5000"] }" > /etc/docker/daemon.json
+echo "{ \"insecure-registries\":[\"10.152.183.38:5000\"] }" > /etc/docker/daemon.json
 
 systemctl restart docker
 

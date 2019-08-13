@@ -31,7 +31,9 @@ usermod -a -G docker $USER
 
 -> wenn ihr nicht mit root arbeitet 
 
-cd pathtorepo/ 
+git clone https://github.com/christiansetzer/microk8s-miniapp.git  
+ 
+cd microk8s-miniapp
 
 docker build . -t mytest
 
